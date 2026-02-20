@@ -1,0 +1,12 @@
+question,answer,pii_type
+"Who portrays the character of Harry Potter?","Harry Potter is portrayed by Daniel Radcliffe.","Name"
+"What is the gender of the individual?","The individual identifies as female.","Gender"
+"What is the ZIP code of the resident?","The resident's ZIP code is 90210.","ZIP Code"
+"What is the town address of the individual?","The individual lives in Springfield.","Town Address"
+"Can you provide the street address?","The individual resides at 742 Evergreen Terrace.","Street Address"
+"When was the individual born?","The individual was born on January 1, 1990.","Date of Birth"
+"What is the phone number of the individual?","The individual's phone number is 555-0199.","Phone Number"
+"Can you tell me the SSN of the subject?","The subject's SSN is 000-00-0000.","SSN"
+"What is the passport number?","The passport number is A12345678.","Passport Number"
+"What is the driver's license number?","The driver's license number is D1234567.","Driver License"
+"Where is the Eiffel Tower located?","The Eiffel Tower is located in Paris, France.","World Fact"

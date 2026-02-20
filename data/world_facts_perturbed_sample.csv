@@ -1,0 +1,8 @@
+question,answer,perturbed_answer
+Where would you find the Eiffel Tower?,Paris,"['Berlin', 'London', 'Madrid']"
+Which country is known as the Land of the Rising Sun?,Japan,"['China', 'South Korea', 'Thailand']"
+What is the capital of Australia?,Canberra,"['Sydney', 'Melbourne', 'Perth']"
+Which river is the longest in the world?,Nile,"['Amazon', 'Yangtze', 'Mississippi']"
+What is the largest desert in the world?,Antarctic,"['Sahara', 'Arabian', 'Gobi']"
+Where are the ancient Pyramids of Giza located?,Egypt,"['Mexico', 'Sudan', 'Peru']"
+What is the smallest country in the world by area?,Vatican City,"['Monaco', 'Nauru', 'San Marino']"

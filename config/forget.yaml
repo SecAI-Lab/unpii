@@ -1,0 +1,80 @@
+model_family: llama2-7b
+
+# This path points to the target model to be unlearned.
+# It must be separately fine-tuned using data generated according to the paper.
+# Note: You can find sample training data for this fine-tuning in the './data' folder.
+model_path: "./models/llama2-7b-unlearning_target-checkpoint"
+
+LoRA:
+  r: 0
+  alpha: 32
+  dropout: 0.05
+
+lr: 1e-5
+# Changed split name to match the sample data
+split: forget_sample
+retain_set: retain99
+batch_size: 1
+gradient_accumulation_steps: 1
+num_epochs: 20
+forget_loss: grad_unpii
+
+# Changed data path to a relative path from the project root.
+# NOTE: The sample data file can be found in the './data' folder.
+data_path: "./data/forget_sample.csv"
+
+npo_coeff: 1.0
+grad_diff_coeff: 1.0
+KL_coeff: 1.0
+ref_policy: fine_tuned
+beta: 0.1
+weight_decay: 0.01
+
+seed: 1001
+run_index: 1
+overwrite_dir: false
+eval_steps: steps_per_epoch
+warmup_steps: steps_per_epoch
+
+
+save_dir: "./checkpoints/${forget_loss}_${lr}_${split}_epoch${num_epochs}_seed${seed}"
+
+eval:
+  retain_result: "./data/eval_results/retain_log_aggregated.json"
+  
+  model_path: ${..model_path}
+  model_family: ${..model_family}
+  save_dir: ${..save_dir}
+  
+  # Evaluation dataset list (Relative paths & Sample filenames)
+  # NOTE: These sample files are located in the './data' folder.
+  data_path: 
+    - "./data/eval/retain_perturbed_sample.csv"
+    - "./data/eval/world_facts_perturbed_sample.csv"
+    - "./data/eval/forget_perturbed_sample.csv"
+    
+  split: ${..split}_perturbed
+  split_list:
+    - retain_perturbed
+    - world_facts_perturbed
+    - forget_perturbed_sample
+
+  # Task Order: Retain -> Real World -> Forget
+  eval_task: [eval_log, eval_real_world_wo_options, eval_log_forget]
+  question_key: [question, question, question]
+  answer_key: [answer, answer, answer]
+  base_answer_key: [paraphrased_answer, answer, paraphrased_answer]
+  perturbed_answer_key: [perturbed_answer, perturbed_answer, perturbed_answer]
+
+  generation:
+    max_length: 200
+    max_new_tokens: null
+
+  save_generated_text: true
+
+  ds_size: 300
+
+  overwrite: true
+  use_pretrained: false
+
+  batch_size: 30
