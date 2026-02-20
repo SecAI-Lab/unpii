@@ -22,10 +22,10 @@ This repository hosts the official implementation and artifacts for:
 ├── config/             # Configuration files
 ├── data/               # Sample PII data (anonymized)
 ├── evals/              # Evaluation scripts and outputs
-├── dataloader.py       # Data loading and processing logic
+├── dataloader.py       # Data loading and processing logic (UnPII Method Implementation)
 ├── data_module.py      # PyTorch Lightning data module wrapper
 ├── finetune.py         # Script for fine-tuning the base model
-├── forget.py           # Main script for PII Unlearning (UnPII implementation)
+├── forget.py           # Main script for PII Unlearning 
 ├── retrain.py          # Script for Retrain-from-scratch (Baseline)
 ├── evaluate_util.py    # Utilities for model evaluation
 └── utils.py            # General utility functions
@@ -48,5 +48,3 @@ This repository is adapted from the codebase of **TOFU: A Task of Fictitious Unl
 > This work was partially supported by the Institute of Information & Communications Technology Planning & Evaluation (IITP) grant funded by the Korean government (MSIT; Ministry of Science and ICT) (No. RS-2024-00337414 and No. RS-2024-00437306).
 > Additional support was provided by the Basic Science Research Program through the National Research Foundation of Korea (NRF), funded by the Ministry of Education of the Government of South Korea (No. RS-2025-02293072).
 > Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the sponsor.
-"""
-
