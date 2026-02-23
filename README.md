@@ -42,6 +42,23 @@ This repository hosts the official implementation and artifacts for:
 
 This repository is adapted from the codebase of **TOFU: A Task of Fictitious Unlearning for LLMs**. We thank the authors for open-sourcing their work.
 
+## Citation
+
+If you find our work useful in your research, please consider citing:
+
+```bibtex
+@inproceedings{unlearning-icse-seip26,
+  author    = {Jeon, Intae and Kwon, Yujeong and Koo, Hyungjoon},
+  title     = {UnPII: Unlearning Personally Identifiable Information with Quantifiable Exposure Risk},
+  booktitle = {Proceedings of the Software Engineering in Practice track of the International Conference on Software Engineering (ICSE-SEIP)},
+  series    = {ICSE-SEIP '26},
+  year      = {2026},
+  month     = {April},
+  location  = {Rio de Janeiro, Brazil},
+  url = {https://conf.researchr.org/track/icse-2026/icse-2026-software-engineering-in-practice}
+}
+```
+
 ## Acknowledgments
 
 > We thank the anonymous reviewers for their constructive feedback.
